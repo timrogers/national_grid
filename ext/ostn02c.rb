@@ -12,14 +12,14 @@ module OSTN02C
     puts "Compiling libostn02"
     FileUtils.mkdir_p object_path
     Dir.chdir object_path do
-      system RbConfig.expand("$(CC) -I#{include_path} $(CPPFLAGS) $(CFLAGS) -c #{sources.join(" ")}")
+      run RbConfig.expand("$(CC) -I#{include_path} $(CPPFLAGS) $(CFLAGS) -c #{sources.join(" ")}")
     end
   end
 
   def package
     puts "Packaging libostn02"
     FileUtils.mkdir_p lib_path
-    system RbConfig.expand("$(AR) -crsv #{library} #{objects}")
+    run RbConfig.expand("$(AR) -crsv #{library} #{objects}")
   end
 
   def sources
@@ -48,5 +48,10 @@ module OSTN02C
 
   def output_path
     File.expand_path("../tmp/ostn02c", __dir__)
+  end
+
+  def run(command)
+    puts command
+    system command
   end
 end
