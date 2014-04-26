@@ -1,5 +1,6 @@
 require "national_grid/version"
 require "national_grid/national_grid"
 require "national_grid/inspect"
+require "national_grid/round"
 require "national_grid/easting_northing"
 require "national_grid/latitude_longitude"

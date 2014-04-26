@@ -1,6 +1,7 @@
 module NationalGrid
   class LatitudeLongitude
     include Inspect
+    include Round
 
     def to_a
       [latitude, longitude, elevation]

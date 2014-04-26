@@ -1,6 +1,7 @@
 module NationalGrid
   class EastingNorthing
     include Inspect
+    include Round
 
     def to_a
       [easting, northing, elevation]

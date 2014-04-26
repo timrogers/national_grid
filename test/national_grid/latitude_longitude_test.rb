@@ -43,6 +43,14 @@ module NationalGrid
       assert_nil LatitudeLongitude.new(-45.878761, 170.502798).to_easting_northing
     end
 
+    def test_round
+      point = LatitudeLongitude.new(12.3456, 78.9012, 34.5678).round(3)
+
+      assert_equal 12.346, point.latitude
+      assert_equal 78.901, point.longitude
+      assert_equal 34.568, point.elevation
+    end
+
     private
 
     def assert_close(expected, actual)
