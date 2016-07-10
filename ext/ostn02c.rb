@@ -12,7 +12,7 @@ module OSTN02C
     puts "Compiling libostn02"
     FileUtils.mkdir_p object_path
     Dir.chdir object_path do
-      run RbConfig.expand("$(CC) -I#{include_path} $(CPPFLAGS) $(CFLAGS) -c #{sources.join(" ")}")
+      run RbConfig.expand("$(CC) -I#{include_path} $(CPPFLAGS) $(CFLAGS) -std=c99 -c #{sources.join(" ")}")
     end
   end
 
