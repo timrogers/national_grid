@@ -1,8 +1,6 @@
 require "mkmf"
 require_relative "../ostn02c"
 
-$CFLAGS += " -std=c99"
-
 dir_config "ostn02c", [OSTN02C.include_path], [OSTN02C.lib_path]
 
 OSTN02C.make or abort "building libostn02 failed"
