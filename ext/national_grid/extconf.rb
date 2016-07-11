@@ -1,6 +1,6 @@
 require "mkmf"
 
-$CFLAGS += " -std=c99"
+$CFLAGS += " -std=c99" unless RbConfig::CONFIG['host_os'] == "darwin15.4.0"
 
 require_relative "../ostn02c"
 
