@@ -1,4 +1,7 @@
 require "mkmf"
+
+$CFLAGS += " -std=c99"
+
 require_relative "../ostn02c"
 
 dir_config "ostn02c", [OSTN02C.include_path], [OSTN02C.lib_path]
